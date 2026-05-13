@@ -296,7 +296,7 @@ a {
    No margin, no padding, no gap. */
 .hero {
   position: relative;
-  /* mobile: navbar = 64px */
+  /* fills exactly the viewport below the sticky navbar */
   height: calc(100vh - 64px);
   height: calc(100dvh - 64px);
   margin: 0;
@@ -305,11 +305,13 @@ a {
   isolation: isolate;
   color: #fff;
 
-  /* centre the .hero__center block both axes */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /*
+   * Two-row grid:
+   *   Row 1 = all remaining space  → content sits here, centred
+   *   Row 2 = stats bar height     → auto-sized to its content
+   */
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
 /* ── Background image ─────────────────────────────────────────── */
@@ -356,18 +358,21 @@ a {
 }
 
 /* ── Centred content block ────────────────────────────────────── */
+/* Sits in grid row 1 — margin:auto pushes it to the exact centre */
 .hero__center {
   position: relative;
   z-index: 3;
-  width: 90%;
-  max-width: 780px;
-  text-align: center;
-  padding-bottom: 90px;   /* leave room for stats bar at bottom */
-
-  /* stack children vertically, all centred */
+  /* fill row 1 and self-centre perfectly */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center;        /* horizontal centre */
+  justify-content: center;    /* vertical centre inside row 1 */
+  text-align: center;
+  width: 90%;
+  max-width: 800px;
+  /* auto margins centre this block inside the grid cell */
+  margin: 0 auto;
+  padding: 2rem 0;
   gap: 0;
 }
 
@@ -541,23 +546,22 @@ a {
   font-size: 0.9rem;
 }
 
-/* ── Stats bar pinned at very bottom of hero ──────────────────── */
+/* ── Stats bar — grid row 2, full width, frosted glass ────────── */
 .hero__stats {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  /* grid places this automatically in row 2 */
+  position: relative;
   z-index: 4;
+  width: 100%;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: rgba(10, 20, 60, 0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(255,255,255,0.10);
-  padding: 14px 24px;
+  background: rgba(8, 18, 52, 0.62);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(255,255,255,0.12);
+  padding: 16px 24px;
 
   opacity: 0;
   animation: fadeUp 0.85s 0.85s cubic-bezier(0.16,1,0.3,1) forwards;
@@ -902,15 +906,14 @@ footer {
 
   .nav-links li { margin: 0; }
   
-  /* Hero — desktop */
+  /* Hero — desktop (navbar is 72px) */
   .hero {
     height: calc(100vh - 72px);
     height: calc(100dvh - 72px);
-    margin: 0;
-    padding: 0;
+    grid-template-rows: 1fr auto;  /* keep grid layout */
   }
 
-  /* Side-by-side CTAs on desktop */
+  /* Side-by-side CTA buttons on desktop */
   .hero__ctas {
     flex-direction: row;
     justify-content: center;
@@ -919,11 +922,6 @@ footer {
   .hero__btn {
     width: auto;
     max-width: none;
-  }
-
-  /* Wider stats bar */
-  .hero__stat {
-    padding: 6px 20px;
   }
 
   .grid { grid-template-columns: repeat(2, 1fr); }
