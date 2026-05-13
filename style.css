@@ -296,6 +296,8 @@ a {
   position: relative;
   height: calc(100vh - 64px);  /* fill exactly below sticky navbar (64px mobile) */
   height: calc(100dvh - 64px);
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;         /* horizontal center */
@@ -353,8 +355,7 @@ a {
   position: relative;
   z-index: 1;
   width: 100%;
-  padding-top: var(--space-4);
-  padding-bottom: 100px;  /* room for floating stat cards */
+  padding: 0 20px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -362,7 +363,11 @@ a {
 
 .hero__content {
   max-width: 680px;
-  text-align: left;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 /* --- Pill label ------------------------------------------------ */
@@ -433,6 +438,8 @@ a {
   flex-direction: column;
   gap: var(--space-3);
   margin-bottom: var(--space-6);
+  width: 100%;
+  align-items: center;
 }
 
 .btn-hero-primary {
@@ -493,6 +500,7 @@ a {
 .hero__contact {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: var(--space-3);
   font-size: var(--text-xs);
   font-weight: 500;
@@ -927,11 +935,12 @@ footer {
   .hero {
     height: calc(100vh - 72px); /* 72px navbar on desktop */
     height: calc(100dvh - 72px);
+    padding: 0;
+    margin: 0;
   }
 
   .hero__inner {
-    padding-top: 0;
-    padding-bottom: 120px;
+    padding: 0;
   }
 
   .hero__ctas {
