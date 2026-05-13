@@ -36,7 +36,7 @@
   --font-display: 'Playfair Display', Georgia, serif;
   --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
 
-  /* Type scale ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â fluid clamp() */
+  /* Type scale Ã¢â‚¬â€ fluid clamp() */
   --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
   --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
   --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
@@ -45,7 +45,7 @@
   --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
   --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
 
-  /* Spacing ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 4px base */
+  /* Spacing Ã¢â‚¬â€ 4px base */
   --space-1: 0.25rem; --space-2: 0.5rem;  --space-3: 0.75rem;
   --space-4: 1rem;    --space-6: 1.5rem;  --space-8: 2rem;
   --space-10: 2.5rem; --space-12: 3rem;   --space-16: 4rem;
@@ -289,29 +289,24 @@ a {
 }
 
 /* ================================================================
-   HERO ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Full-viewport, perfectly centred, attention-grabbing
+   HERO - Full viewport, centred, mobile-first
    ================================================================ */
 
-/*
- * Grid approach:
- *   Row 1 (1fr)  ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ centred content block
- *   Row 2 (auto) ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ frosted stats bar
- * This guarantees true vertical centering regardless of screen height.
- */
+/* Base hero - mobile first (works 320px+) */
 .hero {
   position: relative;
-  height: calc(100vh - 64px);   /* mobile: 64px navbar */
-  height: calc(100dvh - 64px);
+  min-height: calc(100vh - 64px);
+  min-height: calc(100dvh - 64px);
   margin: 0 !important;
   padding: 0 !important;
   overflow: hidden;
   isolation: isolate;
   color: #fff;
-  display: grid;
-  grid-template-rows: 1fr auto;
+  display: flex;
+  flex-direction: column;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Background image ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* Background image */
 .hero__bg {
   position: absolute;
   inset: 0;
@@ -322,100 +317,102 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 25%;
   animation: heroZoom 22s ease-in-out infinite alternate;
 }
 
 @keyframes heroZoom {
-  from { transform: scale(1);    }
+  from { transform: scale(1); }
   to   { transform: scale(1.06); }
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Overlay ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â lightened so building is visible & impactful ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* Dark overlay */
 .hero__overlay {
   position: absolute;
   inset: 0;
   z-index: 1;
-  /* Cinematic fade: clear at centre-top so building shows, dark at bottom for text legibility */
   background:
-    linear-gradient(to top,   rgba(4, 12, 40, 0.92) 0%, rgba(4, 12, 40, 0.0) 45%),
-    linear-gradient(to bottom, rgba(4, 12, 40, 0.65) 0%, rgba(4, 12, 40, 0.0) 35%),
-    radial-gradient(ellipse at 50% 60%, rgba(6, 20, 80, 0.50) 0%, rgba(4, 12, 40, 0.80) 100%);
+    linear-gradient(to top,    rgba(4,12,40,0.95) 0%, transparent 50%),
+    linear-gradient(to bottom, rgba(4,12,40,0.65) 0%, transparent 30%),
+    radial-gradient(ellipse at 50% 60%, rgba(5,18,72,0.55) 0%, rgba(4,12,40,0.85) 100%);
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Subtle dot texture ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* Dot texture */
 .hero__dots {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.045) 1px, transparent 1px);
-  background-size: 30px 30px;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Centred content block ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
-/* margin:auto inside the 1fr grid row = mathematical vertical centre */
+/* Content block - takes all remaining space, centres content */
 .hero__center {
   position: relative;
   z-index: 3;
-  width: min(90%, 780px);
-  margin: auto;                  /* auto top+bottom ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ true vertical centre */
-  padding: 0 16px;               /* safe edge padding */
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
-  gap: 0;                        /* controlled by margin-bottom on each child */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 20px 24px;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Location pill ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* Location pill */
 .hero__pill {
   display: inline-flex;
   align-items: center;
-  gap: 9px;
-  background: rgba(255, 255, 255, 0.13);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.30);
+  gap: 8px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.28);
   border-radius: 999px;
-  padding: 8px 20px;
-  font-size: 0.8rem;
+  padding: 6px 16px;
+  font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.04em;
   color: #fff;
   margin-bottom: 0.6rem;
+  max-width: 90%;
+  text-align: center;
   opacity: 0;
   animation: fadeDown 0.65s 0.05s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 
-/* Pulsing gold dot */
 .hero__pill-dot {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: var(--color-gold);
+  background: #FAD234;
   flex-shrink: 0;
   animation: pulseDot 2s ease-in-out infinite;
 }
 
 @keyframes pulseDot {
-  0%, 100% { box-shadow: 0 0 0 0   rgba(250,210,52,0.70); }
-  50%       { box-shadow: 0 0 0 8px rgba(250,210,52,0);    }
+  0%,100% { box-shadow: 0 0 0 0   rgba(250,210,52,0.70); }
+  50%      { box-shadow: 0 0 0 8px rgba(250,210,52,0); }
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ H1 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â dominates the screen ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* H1 */
 .hero__title {
   font-family: var(--font-display);
-  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-size: clamp(1.7rem, 7vw, 4.5rem);
   font-weight: 800;
-  line-height: 1.08;
-  letter-spacing: -0.03em;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
   color: #fff;
-  margin-bottom: 0.55rem;
+  margin-bottom: 0.5rem;
+  word-break: break-word;
   opacity: 0;
   animation: fadeUp 0.8s 0.18s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 
-/* "Expert Care" ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â gold gradient text */
+/* Gold shimmer accent */
 .hero__accent {
   display: block;
   background: linear-gradient(120deg, #FAD234 0%, #ffe87c 60%, #FAD234 100%);
@@ -431,105 +428,101 @@ a {
   to   { background-position: 200% center; }
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Sub-copy ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* Sub-copy */
 .hero__sub {
-  font-size: clamp(1rem, 2.2vw, 1.15rem);
-  line-height: 1.7;
-  color: rgba(255,255,255,0.88);
-  max-width: 560px;
+  font-size: clamp(0.88rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  color: rgba(255,255,255,0.87);
+  max-width: 540px;
   margin-bottom: 1rem;
   opacity: 0;
   animation: fadeUp 0.8s 0.32s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 
 .hero__sub strong {
-  color: var(--color-gold);
+  color: #FAD234;
   font-weight: 700;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ CTA buttons ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* CTA buttons wrapper */
 .hero__ctas {
   display: flex;
-  flex-direction: column;      /* mobile: stacked */
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.55rem;
   width: 100%;
-  margin-bottom: 0.9rem;
+  max-width: 340px;
+  margin-bottom: 0.8rem;
   opacity: 0;
   animation: fadeUp 0.8s 0.46s cubic-bezier(0.16,1,0.3,1) forwards;
 }
 
+/* Button base */
 .hero__btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   justify-content: center;
-  gap: 9px;
+  gap: 8px;
   height: 48px;
-  padding: 0 36px;
-  border-radius: 10px;
+  width: 100%;
+  padding: 0 20px;
+  border-radius: 9px;
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.01em;
   cursor: pointer;
   text-decoration: none;
-  width: 100%;
-  max-width: 280px;
-  transition: transform 0.22s ease, box-shadow 0.22s ease, background 0.22s ease;
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* ÃƒÂ¢Ã‚ÂÃ‚Â¶ Solid primary ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â gold */
+/* Gold solid button */
 .hero__btn--gold {
   background: linear-gradient(135deg, #FAD234 0%, #f5c800 100%);
   color: #0d1b3e;
   border: none;
-  box-shadow: 0 4px 20px rgba(250,210,52,0.45);
+  animation: btnGlow 2.8s ease-in-out infinite;
 }
-
 .hero__btn--gold:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 10px 32px rgba(250,210,52,0.60);
+  transform: translateY(-2px) scale(1.01);
+  animation: none;
+  box-shadow: 0 8px 28px rgba(250,210,52,0.60);
 }
-
-/* Subtle permanent glow pulse on primary */
 @keyframes btnGlow {
-  0%, 100% { box-shadow: 0 4px 20px rgba(250,210,52,0.42); }
-  50%       { box-shadow: 0 6px 28px rgba(250,210,52,0.65); }
+  0%,100% { box-shadow: 0 4px 18px rgba(250,210,52,0.40); }
+  50%      { box-shadow: 0 6px 26px rgba(250,210,52,0.62); }
 }
-.hero__btn--gold { animation: btnGlow 2.8s ease-in-out infinite; }
-.hero__btn--gold:hover { animation: none; }
 
-/* ÃƒÂ¢Ã‚ÂÃ‚Â· Outline ghost ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â white border */
+/* Ghost outline button */
 .hero__btn--glass {
   background: transparent;
   color: #fff;
   border: 2px solid rgba(255,255,255,0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
 }
-
 .hero__btn--glass:hover {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.14);
   border-color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(255,255,255,0.12);
+  transform: translateY(-2px);
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Quick-contact strip ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* Contact strip */
 .hero__qc {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0.4rem 0.9rem;
-  font-size: 0.82rem;
+  gap: 0.3rem 0.7rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: rgba(255,255,255,0.72);
-  padding: 8px 12px;
+  padding: 7px 12px;
   background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(255,255,255,0.12);
-  border-radius: 8px;
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 7px;
+  width: 100%;
+  max-width: 340px;
+  box-sizing: border-box;
   opacity: 0;
   animation: fadeUp 0.8s 0.60s cubic-bezier(0.16,1,0.3,1) forwards;
 }
@@ -537,21 +530,20 @@ a {
 .hero__qc-link {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 4px;
   color: rgba(255,255,255,0.90);
   text-decoration: none;
   font-weight: 600;
   transition: color 0.18s;
 }
-
-.hero__qc-link:hover { color: var(--color-gold); }
+.hero__qc-link:hover { color: #FAD234; }
 
 .hero__qc-sep {
   color: rgba(255,255,255,0.25);
   font-weight: 300;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Stats bar ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â grid row 2, frosted glass ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* Stats bar - at bottom of hero */
 .hero__stats {
   position: relative;
   z-index: 4;
@@ -559,11 +551,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(6, 14, 44, 0.70);
+  background: rgba(6,14,44,0.72);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border-top: 1px solid rgba(255,255,255,0.14);
-  padding: 14px 16px;
+  border-top: 1px solid rgba(255,255,255,0.13);
+  padding: 12px 8px;
   opacity: 0;
   animation: fadeUp 0.8s 0.76s cubic-bezier(0.16,1,0.3,1) forwards;
 }
@@ -574,46 +566,82 @@ a {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 2px 12px;
+  padding: 2px 6px;
 }
 
 .hero__stat-num {
   font-family: var(--font-display);
-  font-size: clamp(1.4rem, 4vw, 2rem);
+  font-size: clamp(1.1rem, 3.5vw, 2rem);
   font-weight: 800;
-  color: var(--color-gold);
+  color: #FAD234;
   line-height: 1;
 }
 
-.hero__stat-num--gold { color: var(--color-gold); }
+.hero__stat-num--gold { color: #FAD234; }
 
 .hero__stat-lbl {
-  font-size: 0.66rem;
+  font-size: clamp(0.52rem, 1.5vw, 0.65rem);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: rgba(255,255,255,0.65);
-  margin-top: 4px;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.62);
+  margin-top: 3px;
 }
 
-/* Vertical divider between stats */
 .hero__stat-divider {
   width: 1px;
-  height: 38px;
+  height: 30px;
   background: rgba(255,255,255,0.18);
   flex-shrink: 0;
 }
 
-/* ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ Keyframes ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ */
+/* Keyframes */
 @keyframes fadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0);    }
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-
 @keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-16px); }
-  to   { opacity: 1; transform: translateY(0);     }
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 
+/* Desktop overrides */
+@media (min-width: 768px) {
+  .hero {
+    min-height: calc(100vh - 72px);
+    min-height: calc(100dvh - 72px);
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
+  .hero__bg img { object-position: center center; }
+  .hero__center {
+    max-width: 820px;
+    margin: auto;
+    padding: 24px 32px;
+  }
+  .hero__pill { font-size: 0.8rem; padding: 8px 20px; }
+  .hero__ctas {
+    flex-direction: row;
+    align-items: center;
+    max-width: none;
+    width: auto;
+    gap: 0.75rem;
+  }
+  .hero__btn {
+    width: auto;
+    min-width: 180px;
+    height: 52px;
+    font-size: 1rem;
+    padding: 0 32px;
+  }
+  .hero__qc {
+    max-width: none;
+    width: auto;
+    font-size: 0.82rem;
+  }
+  .hero__stats { padding: 14px 24px; }
+  .hero__stat { padding: 2px 12px; }
+  .hero__stat-divider { height: 38px; }
+}
 
 /* Sections */
 section {
@@ -901,115 +929,117 @@ footer {
 }
 
 /* ================================================================
-   HERO â€” Mobile Optimisations  â‰¤767px
+   HERO — Mobile Optimisations  ≤767px
    ================================================================ */
 @media (max-width: 767px) {
 
-  /* â”€â”€ Section height â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
-  /* 100svh = small viewport height â€” automatically subtracts mobile browser chrome */
+  /* ── Section height ─────────────────────────────────────────── */
   .hero {
-    height: calc(100svh - 64px);     /* modern: browser chrome aware */
-    height: calc(100vh  - 64px);     /* fallback for older browsers  */
-    min-height: 520px;               /* never collapse on tiny screens */
+    /* Use min-height so mobile browser chrome (URL bar) doesn't cut content */
+    height: auto;
+    min-height: calc(100vh - 64px);
+    min-height: calc(100dvh - 64px);
     grid-template-rows: 1fr auto;
   }
 
-  /* â”€â”€ Background: frame the clinic building facade â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Background: frame the building on portrait phones ──────── */
   .hero__bg img {
     object-position: center 20%;
   }
 
-  /* â”€â”€ Overlay: stronger at bottom so text always pops â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Stronger overlay — text must be readable at all times ──── */
   .hero__overlay {
     background:
-      linear-gradient(to top,    rgba(4, 12, 40, 0.94) 0%,  transparent 50%),
-      linear-gradient(to bottom, rgba(4, 12, 40, 0.65) 0%,  transparent 28%),
-      radial-gradient(ellipse at 50% 70%, rgba(5, 18, 72, 0.55) 0%, rgba(4, 12, 40, 0.88) 100%);
+      linear-gradient(to top,    rgba(4, 12, 40, 0.96) 0%,  transparent 55%),
+      linear-gradient(to bottom, rgba(4, 12, 40, 0.70) 0%,  transparent 30%),
+      radial-gradient(ellipse at 50% 70%, rgba(5, 18, 72, 0.60) 0%, rgba(4, 12, 40, 0.90) 100%);
   }
 
-  /* â”€â”€ Centre block: fills the 1fr row, vertically centred â”€â”€â”€â”€â”€â”€ */
+  /* ── Centre block: safe horizontal padding, box-sizing safe ─── */
   .hero__center {
     box-sizing: border-box;
     width: 100%;
+    padding: 16px 20px;      /* left/right safe edge, never touches screen */
     max-width: 100%;
-    padding: 12px 20px;
-    margin: auto;            /* auto in grid 1fr row = true vertical centre */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    margin: auto;
+    overflow: hidden;        /* catch any child overflow */
   }
 
-  /* â”€â”€ Location pill â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Location pill ──────────────────────────────────────────── */
   .hero__pill {
     font-size: 0.70rem;
     padding: 5px 13px;
     gap: 7px;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.5rem;
+    /* Allow wrap instead of cut-off on 320px */
     white-space: normal;
-    line-height: 1.3;
-    max-width: 95%;
+    text-align: center;
+    line-height: 1.4;
+    max-width: 100%;
   }
 
-  /* â”€â”€ H1 headline â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  .hero__pill-dot {
+    flex-shrink: 0;
+    width: 7px;
+    height: 7px;
+  }
+
+  /* ── H1 headline ────────────────────────────────────────────── */
   .hero__title {
-    font-size: clamp(1.65rem, 7.5vw, 2.1rem);
+    font-size: clamp(1.6rem, 7.5vw, 2.1rem);
     line-height: 1.1;
     letter-spacing: -0.02em;
     margin-bottom: 0.4rem;
-    word-break: break-word;
+    word-break: break-word;    /* prevent overflow on narrow screens */
   }
 
-  /* â”€â”€ Sub-copy â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Sub-copy ───────────────────────────────────────────────── */
   .hero__sub {
-    font-size: 0.87rem;
+    font-size: 0.88rem;
     line-height: 1.55;
     max-width: 100%;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.8rem;
   }
 
-  /* â”€â”€ CTA buttons: full-width, 44px tap targets â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── CTA buttons: full-width, 44px tap target (iOS/Android HIG) */
   .hero__ctas {
     flex-direction: column;
-    align-items: stretch;
-    gap: 0.45rem;
+    align-items: stretch;        /* make buttons fill width */
+    gap: 0.5rem;
     width: 100%;
-    margin-bottom: 0.65rem;
+    max-width: 100%;
+    margin-bottom: 0.7rem;
   }
 
   .hero__btn {
     width: 100%;
     max-width: 100%;
-    height: 44px;
+    height: 44px;                /* Apple/Google minimum tap target */
     font-size: 0.9rem;
     border-radius: 8px;
     padding: 0 16px;
     justify-content: center;
   }
 
-  /* â”€â”€ Contact strip: single row with all 3 items â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Contact strip ──────────────────────────────────────────── */
   .hero__qc {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 0.2rem 0.5rem;
-    font-size: 0.70rem;
-    padding: 5px 8px;
+    font-size: 0.72rem;
+    gap: 0.25rem 0.5rem;
+    padding: 6px 8px;
     border-radius: 6px;
-    line-height: 1.4;
+    line-height: 1.5;
     width: 100%;
     box-sizing: border-box;
   }
 
   .hero__qc-link {
-    font-size: 0.70rem;
+    font-size: 0.72rem;
   }
 
-  /* â”€â”€ Stats bar: compact â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+  /* ── Stats bar ──────────────────────────────────────────────── */
   .hero__stats {
     padding: 10px 6px;
+    gap: 0;
   }
 
   .hero__stat {
@@ -1023,7 +1053,7 @@ footer {
   }
 
   .hero__stat-lbl {
-    font-size: 0.54rem;
+    font-size: 0.55rem;
     letter-spacing: 0.04em;
     margin-top: 3px;
   }
@@ -1033,7 +1063,6 @@ footer {
     width: 1px;
   }
 }
-
 
 /* Desktop Styles */
 @media (min-width: 768px) {
@@ -1050,7 +1079,7 @@ footer {
 
   .nav-links li { margin: 0; }
   
-  /* Hero ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â desktop (navbar is 72px) */
+  /* Hero Ã¢â‚¬â€ desktop (navbar is 72px) */
   .hero {
     height: calc(100vh - 72px);
     height: calc(100dvh - 72px);
