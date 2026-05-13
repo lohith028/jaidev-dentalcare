@@ -294,14 +294,15 @@ a {
 
 .hero {
   position: relative;
-  min-height: 100vh;
-  min-height: 100dvh;          /* mobile address-bar aware */
+  height: calc(100vh - 64px);  /* fill exactly below sticky navbar (64px mobile) */
+  height: calc(100dvh - 64px);
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;         /* horizontal center */
+  justify-content: center;     /* vertical center */
   color: #FFFFFF;
   overflow: hidden;
-  isolation: isolate;          /* new stacking context */
+  isolation: isolate;
 }
 
 /* --- Background image layer ------------------------------------ */
@@ -351,12 +352,17 @@ a {
 .hero__inner {
   position: relative;
   z-index: 1;
-  padding-top: 100px;   /* clear navbar */
-  padding-bottom: 120px; /* room for floating stats */
+  width: 100%;
+  padding-top: var(--space-4);
+  padding-bottom: 100px;  /* room for floating stat cards */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero__content {
   max-width: 680px;
+  text-align: left;
 }
 
 /* --- Pill label ------------------------------------------------ */
@@ -918,9 +924,14 @@ footer {
   .nav-links li { margin: 0; }
   
   /* Hero — desktop enhancements */
+  .hero {
+    height: calc(100vh - 72px); /* 72px navbar on desktop */
+    height: calc(100dvh - 72px);
+  }
+
   .hero__inner {
-    padding-top: 140px;
-    padding-bottom: 160px;
+    padding-top: 0;
+    padding-bottom: 120px;
   }
 
   .hero__ctas {
