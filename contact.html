@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Appointment | Jaidev Dental Care — Bengaluru</title>
+  <meta name="description" content="Book your dental appointment at Jaidev Multispeciality Dental Care in Electronic City, Bengaluru. Call 8098761238 or WhatsApp 7411488211.">
+  <link rel="canonical" href="https://www.jaidevdental.com/contact.html">
+  <link rel="icon" href="favicon-32x32.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Jaidev Logo" width="140" height="48"></a>
+      <nav class="nav-links-wrapper">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li><a href="contact.html" class="btn btn-primary">Book Appointment</a></li>
+        </ul>
+      </nav>
+      <button class="hamburger" aria-label="Open navigation menu"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero-inner" style="background: linear-gradient(135deg, #1532A6, #006BFF); color: white; padding: var(--space-20) 0;">
+      <div class="container">
+        <nav class="breadcrumb" style="margin-bottom: var(--space-4); font-size: var(--text-sm); opacity: 0.8;">
+          <a href="index.html">Home</a> &gt; Contact
+        </nav>
+        <h1>Book a Dental Appointment in Electronic City, Bengaluru</h1>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <!-- Left - Form -->
+          <div class="contact-form-wrapper reveal">
+            <h2>Request an Appointment</h2>
+            <form id="contact-form" action="https://formspree.io/f/xpwzgkqb" method="POST">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required placeholder="Full Name">
+                <span class="error-msg">This field is required.</span>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone / WhatsApp Number</label>
+                <input type="tel" id="phone" name="phone" required pattern="[0-9]{10}" placeholder="10-digit number">
+                <span class="error-msg">Please enter a valid 10-digit phone number.</span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address (optional)</label>
+                <input type="email" id="email" name="email" placeholder="example@gmail.com">
+              </div>
+              <div class="form-group">
+                <label for="service">Service Needed</label>
+                <select id="service" name="service" required>
+                  <option value="">-- Select a Service --</option>
+                  <option value="Implants">Dental Implants</option>
+                  <option value="Crowns">Dental Crowns & Bridges</option>
+                  <option value="RCT">Root Canal Treatment (RCT)</option>
+                  <option value="Whitening">Teeth Whitening & Cleaning</option>
+                  <option value="Braces">Orthodontic Braces & Aligners</option>
+                  <option value="Extraction">Tooth Extraction & Oral Surgery</option>
+                  <option value="Checkup">General Dental Check-up</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="error-msg">Please select a service.</span>
+              </div>
+              <div class="form-group">
+                <label for="date">Preferred Appointment Date</label>
+                <input type="date" id="date" name="date">
+              </div>
+              <div class="form-group">
+                <label for="message">Additional Notes (optional)</label>
+                <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary" style="width: 100%;">Send Appointment Request</button>
+            </form>
+          </div>
+
+          <!-- Right - Info -->
+          <div class="contact-info reveal">
+            <h2>Get In Touch</h2>
+            <div style="margin-bottom: var(--space-8);">
+              <p>📞 <a href="tel:+918098761238">8098761238</a></p>
+              <p>📞 <a href="tel:+917411488211">7411488211</a></p>
+              <p style="margin-top: var(--space-4);">📧 <a href="mailto:jaidevmultispecialitydental@gmail.com">jaidevmultispecialitydental@gmail.com</a></p>
+              <a href="https://wa.me/917411488211" target="_blank" rel="noopener noreferrer" class="btn btn-gold" style="margin-top: var(--space-6); min-width: auto; width: 100%;">Chat on WhatsApp</a>
+            </div>
+
+            <div style="margin-bottom: var(--space-8);">
+              <h3>Clinic Address</h3>
+              <address style="font-style: normal; color: var(--color-text-muted);">
+                Jaidev Multispeciality Dental Care<br>
+                No. 74, Srinivasa Reddy Building, Govind Shetty Palya,<br>
+                Konappana Agrahara, opposite Drug City Medical Shop,<br>
+                Phase II, Electronic City, Bengaluru, Karnataka 560100
+              </address>
+            </div>
+
+            <div>
+              <h3>Opening Hours</h3>
+              <table style="width: 100%; border-collapse: collapse; margin-top: var(--space-4); font-size: var(--text-sm);">
+                <tr style="border-bottom: 1px solid var(--color-divider);">
+                  <th style="text-align: left; padding: var(--space-2) 0;">Day</th>
+                  <th style="text-align: left; padding: var(--space-2) 0;">Morning</th>
+                  <th style="text-align: left; padding: var(--space-2) 0;">Evening</th>
+                </tr>
+                <tr style="border-bottom: 1px solid var(--color-divider);">
+                  <td style="padding: var(--space-2) 0;">Mon – Sat</td>
+                  <td>9:30 AM – 2:30 PM</td>
+                  <td>4:00 PM – 9:00 PM</td>
+                </tr>
+                <tr>
+                  <td style="padding: var(--space-2) 0;">Sunday</td>
+                  <td>10:00 AM – 2:00 PM</td>
+                  <td>Closed</td>
+                </tr>
+              </table>
+            </div>
+
+            <img src="sittting-space.webp" alt="Clinic Interior" style="margin-top: var(--space-8); border-radius: var(--radius-lg); width: 100%;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map -->
+    <section class="map-section">
+      <div class="container">
+        <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg);">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.8157462209915!2d77.66879420000001!3d12.8551743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6d680d45468d%3A0x2a0353ad07efef9a!2sJaidev%20Multispeciality%20Dental%20Care!5e0!3m2!1sen!2sin!4v1778657111113!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-col"><img src="logo.png" alt="Logo" width="140" height="48"></div>
+      <div class="footer-col"><h4>Contact</h4><p>8098761238 / 7411488211</p></div>
+      <div class="footer-col"><h4>Hours</h4><p>Mon-Sat: 9:30 AM - 9:00 PM</p></div>
+    </div>
+  </footer>
+  <script src="main.js" defer></script>
+</body>
+</html>
