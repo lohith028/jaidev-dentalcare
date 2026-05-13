@@ -946,6 +946,7 @@ footer {
   .hero__ctas {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
   }
 
   .hero__stats {
